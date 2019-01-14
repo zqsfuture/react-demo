@@ -16,14 +16,22 @@
     <script src="https://cdn.bootcss.com/babel-core/5.8.38/browser.js"></script>
     <script type="text/babel">
         // JSX语法
+        let names = ['jspang','技术胖','React'];
+
         let HelloComponent = React.createClass({
             render() {
-                return <h1>Hello {this.props.name?this.props.name:'world'}</h1>
+                return  <div>
+                            {
+                                names.map(name=>{
+                                    return <div key={name}>Hello,{name}!</div>;
+                                })
+                            }
+                        </div>
             }
         });
 
         ReactDOM.render(
-            <HelloComponent name="jspang"/>,
+            <HelloComponent/>,
             document.getElementById('reactContainer')
         )
     </script>
